@@ -3,10 +3,10 @@
 <ul>
   <h3>shitty Doses list...</h2>
   <% @cocktail.doses.each do |dose| %>
-    <p><%= dose.ingredient.name %>: <%= dose.description %> | <%= link_to "delete the shitty Dose", dose_path(@doses) %></p>
+    <p><%= dose.ingredient.name %>: <%= dose.description %> | <%= link_to "delete the shitty Dose", dose_path(dose.id), method: 'delete' %></p>
   <% end %>
 </ul>
 
-<%= link_to "add a shitty Dose || ", new_cocktail_dose_path(cocktail_id) %>
+<%= link_to "add a shitty Dose || ", new_cocktail_dose_path(@cocktail.id) %>
 
 <%= link_to "Go Back to the shitty List", cocktails_path %>
